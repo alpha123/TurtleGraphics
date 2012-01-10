@@ -1,6 +1,6 @@
 An implementation of the system described [here](http://programmingpraxis.com/2012/01/03/turtle-graphics/), written in JavaScript and using the HTML5 `<canvas>` element for rendering.
 
-It exports exactly one function, `turtleGraphics`, with the following signature:
+It exports exactly one global variable, `turtleGraphics`, a function with the following signature:
 
     turtleGraphics(Element|String canvas, Function draw)
 
