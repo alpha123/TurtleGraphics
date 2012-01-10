@@ -1,0 +1,7 @@
+# UEStudio creates .bak files #
+###############################
+*.bak
+
+# OS generated files #
+######################
+Thumbs.db

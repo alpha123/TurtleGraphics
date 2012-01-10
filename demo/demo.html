@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Turtle Graphics Demo</title>
+  </head>
+  <body>
+    <canvas id="turtle-canvas"></canvas>
+    <script src="../src/turtleGraphics.js"></script>
+    <script>
+      var canvas = document.getElementById('turtle-canvas');
+      canvas.width = screen.availWidth;
+      canvas.height = screen.availHeight;
+      turtleGraphics.define('tree', function tree(size) {
+          if (size < 5) {
+              forward(size);
+              back(size);
+          }
+          else {
+              forward(size / 3);
+              left(30);
+              tree(size * (2 / 3));
+              right(30);
+              back(size / 3);
+              forward(size / 2);
+              right(25);
+              tree(size / 2);
+              left(25);
+              back(size / 2);
+              forward(size * (5 / 6));
+              right(25);
+              tree(size / 2);
+              left(25);
+              back(size * (5 / 6));
+          }
+      });
+      turtleGraphics(canvas, function () {
+          penup();
+          forward(600);
+          right(90);
+          forward(600);
+          right(90);
+          pendown();
+          tree(400);
+      });
+    </script>
+  </body>
+</html>
