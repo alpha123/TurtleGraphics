@@ -28,10 +28,8 @@ function turtleGraphics(canvas, draw) {
     function args(args, extras) {
         return values.concat(context, canvas, turtle, [slice.call(args)], [extras]);
     }
-    context.beginPath();
     context.moveTo(turtle.x, turtle.y);
     returnVal = makeFn(keys, draw).apply(this, args(arguments, []));
-    context.closePath();
     return returnVal;
 }
 
@@ -104,11 +102,13 @@ function mover(add) {
             newY = newCoord(__turtle.y, dist, __turtle.heading, add, Math.cos);
         __turtle.x = newX;
         __turtle.y = newY;
+        __canvas.beginPath();
         if (__turtle.drawing)
             __canvas.lineTo(newX, newY);
         else
             __canvas.moveTo(newX, newY);
         __canvas.stroke();
+        __canvas.closePath();
     }
     fn.args = [add, newCoord];
     return fn;
