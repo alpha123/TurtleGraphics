@@ -108,7 +108,7 @@ function mover(add) {
         else
             __canvas.moveTo(newX, newY);
         __canvas.stroke();
-        __canvas.endPath();
+        __canvas.closePath();
     }
     fn.args = [add, newCoord];
     return fn;
