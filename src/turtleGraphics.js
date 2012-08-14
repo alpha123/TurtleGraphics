@@ -88,6 +88,8 @@ define('clearscreen', function () {
     __turtle.heading = 0;
     __turtle.drawing = true;
     __canvas.save();
+    __canvas.lineWidth = 1;
+    __canvas.strokeStyle = '#000000';
     __canvas.setTransform(1, 0, 0, 1, 0, 0);
     __canvas.clearRect(0, 0, __canvasElement.width, __canvasElement.height);
     __canvas.restore();
