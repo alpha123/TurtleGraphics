@@ -57,6 +57,14 @@ define('setcolor', function (color) {
     __canvas.strokeStyle = color;
 });
 
+define('width', function () {
+    return __canvas.lineWidth;
+});
+
+define('setwidth', function (width) {
+    __canvas.lineWidth = width;
+});
+
 define('pos', function () {
     return {x: __turtle.x, y: __turtle.y};
 });
