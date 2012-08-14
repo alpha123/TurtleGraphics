@@ -49,6 +49,14 @@ define('pendown', function () {
     __turtle.drawing = true;
 });
 
+define('color', function () {
+    return __canvas.strokeStyle;
+});
+
+define('setcolor', function (color) {
+    __canvas.strokeStyle = color;
+});
+
 define('pos', function () {
     return {x: __turtle.x, y: __turtle.y};
 });
