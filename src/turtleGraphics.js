@@ -30,6 +30,7 @@ function turtleGraphics(canvas, draw) {
     }
     context.moveTo(turtle.x, turtle.y);
     returnVal = makeFn(keys, draw).apply(this, args(arguments, []));
+    context.closePath();
     return returnVal;
 }
 
@@ -108,7 +109,6 @@ function mover(add) {
         else
             __canvas.moveTo(newX, newY);
         __canvas.stroke();
-        __canvas.closePath();
     }
     fn.args = [add, newCoord];
     return fn;
